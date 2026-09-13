@@ -28,8 +28,8 @@ public class CrearCuboenCodigo : MonoBehaviour
         5,7,6, //DECIMO TRIANGULO
         0,6,7,//UNDÉCIMO TRIANGULO      //cara 6
         0,1,6//DUODÉCIMO TRIANGULO
-        }; 
-    
+        };
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -54,14 +54,14 @@ public class CrearCuboenCodigo : MonoBehaviour
 
         OBCUBO.AddComponent<MeshRenderer>();
         var meshRendererMaterial = OBCUBO.GetComponent<MeshRenderer>().material;        // Get the material of the MeshRenderer component from the OBCUBO GameObject
-        meshRendererMaterial.color = Color.cyan;        // Set the color of the mesh renderer material
+        meshRendererMaterial.color = Color.aquamarine;        // Set the color of the mesh renderer material
 
-        OBCUBO.transform.position = Vector3.one;        // Set the position of the OBCUBO GameObject to (1, 1, 1)
-    }
+        //Add a Rigid Body component to the OBCUBO GameObject and set its mass to 1
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        OBCUBO.AddComponent<Rigidbody>();
+        OBCUBO.GetComponent<Rigidbody>().mass = 1;
+
+        OBCUBO.transform.position = new Vector3(0, 5, 0);        // Set the position of the OBCUBO GameObject to (0, 5, 0)
+        OBCUBO.transform.rotation = new Quaternion(3, 2, 1, 5); // Set the rotation of the OBCUBO GameObject to a new Quaternion with values (3, 2, 1, 5)
     }
 }
